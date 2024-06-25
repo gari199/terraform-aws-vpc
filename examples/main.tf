@@ -1,12 +1,16 @@
+provider "aws" {
+  region = "eu-central-1"
+}
+
 module "vpc" {
-  source                       = "../vpc"
-  region                       = var.region
-  project_name                 = var.project_name
-  vpc_cidr                     = var.vpc_cidr
-  public_subnet_az1_cidr       = var.public_subnet_az1_cidr
-  public_subnet_az2_cidr       = var.public_subnet_az2_cidr
-  private_app_subnet_az1_cidr  = var.private_app_subnet_az1_cidr
-  private_app_subnet_az2_cidr  = var.private_app_subnet_az2_cidr
-  private_data_subnet_az1_cidr = var.private_data_subnet_az1_cidr
-  private_data_subnet_az2_cidr = var.private_data_subnet_az2_cidr
+  source                       = "/../"
+  region                       = "eu-central-1"
+  project_name                 = "my-vpc"
+  vpc_cidr                     = "10.0.0.0/16"
+  public_subnet_az1_cidr       = "10.0.0.0/24"
+  public_subnet_az2_cidr       = "10.0.1.0/24"
+  private_app_subnet_az1_cidr  = "10.0.2.0/24"
+  private_app_subnet_az2_cidr  = "10.0.3.0/24"
+  private_data_subnet_az1_cidr = "10.0.4.0/24"
+  private_data_subnet_az2_cidr = "10.0.5.0/24"
 }
